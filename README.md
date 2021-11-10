@@ -17,7 +17,17 @@ The implementation is very simple, basically the inotify-cpp `example.cpp` with
 some small changes.
 
 
-## Instructions for Ubuntu 20.04
+## Binary distribution
+
+I've tagged version v1.0.0. and uploaded a release on GitHub:
+
+https://github.com/rayburgemeestre/tailer/releases/tag/v1.0.0
+
+If you trust me you can use the binary, otherwise you have to compile it
+yourself, with instructions below. :)
+
+
+## Compile instructions for Ubuntu 20.04
 
 Sorry, currently only tested on Ubuntu 20.04. If you get this thing working on
 another distro, please let me know how, so I can extend the instructions.
