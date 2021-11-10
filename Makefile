@@ -10,7 +10,7 @@ prepare:  ## set up build environment
 	make -j $$(nproc)
 
 build: ## build tailer
-	g++ -std=c++17 -Iinotify-cpp/src/include src/main.cpp -o tailer inotify-cpp/src/libinotify-cpp.a -lpthread
+	g++ -Wall -O2 -std=c++17 -Iinotify-cpp/src/include src/main.cpp -o tailer inotify-cpp/src/libinotify-cpp.a -lpthread
 
 install:  ## install to /usr/local/bin/tailer
 	sudo cp -prv tailer /usr/local/bin/tailer

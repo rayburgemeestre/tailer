@@ -1,11 +1,14 @@
 ## `tailer` - tail entire directories at once using inotify
 
-This project is based on Erik Zenker's inotify-cpp library for monitoring file
-create/modify/remove events. This library does all the heavy-lifting.
-See: https://github.com/erikzenker/inotify-cpp
+This utility is based on Erik Zenker's inotify-cpp library for monitoring file
+create/modify/remove events. That library does all the heavy-lifting.  See:
+https://github.com/erikzenker/inotify-cpp
 
 Conceptually `tailer` is equivalent to `tail -F -n 0 *`, which also tails
-multiple files at once, but it won't pick up newly created files.
+multiple files at once, but with one limitation, it won't pick up newly created
+files. That limitation was the main reason for making this utility.
+
+This program does not have any CPU usage, only when it reacts to inotify events.
 
 
 ## Implementation
@@ -15,6 +18,9 @@ some small changes.
 
 
 ## Instructions for Ubuntu 20.04
+
+Sorry, currently only tested on Ubuntu 20.04. If you get this thing working on
+another distro, please let me know how, so I can extend the instructions.
 
     git clone --recursive https://github.com/rayburgemeestre/tailer
     cd tailer

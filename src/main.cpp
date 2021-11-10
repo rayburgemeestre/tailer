@@ -4,8 +4,6 @@
 #include <mutex>
 #include <unordered_map>
 
-#include <sys/stat.h>
-
 #include <inotify-cpp/FileSystemAdapter.h>
 #include <inotify-cpp/NotifierBuilder.h>
 
@@ -37,12 +35,7 @@ int main(int argc, char** argv) {
     auto filename = notification.path.string();
 
     if (notification.event == inotify::Event::modify || notification.event == inotify::Event::create) {
-      // Read current filesize
-      struct stat statbuf;
-      if (stat(filename.c_str(), &statbuf) == -1) {
-        return;
-      }
-      size_t current_size = (size_t)statbuf.st_size;
+      size_t current_size = std::filesystem::file_size(notification.path);
 
       // Lookup last known filesize for file (otherwise assume zero)
       std::unique_lock lock(mut);
