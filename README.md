@@ -19,9 +19,9 @@ some small changes.
 
 ## Binary distribution
 
-I've tagged version v1.0.0. and uploaded a release on GitHub:
+I've tagged version v1.0.1. and uploaded a release on GitHub:
 
-https://github.com/rayburgemeestre/tailer/releases/tag/v1.0.0
+https://github.com/rayburgemeestre/tailer/releases/tag/v1.0.1
 
 If you trust me you can use the binary, otherwise you have to compile it
 yourself, with instructions below. :)
